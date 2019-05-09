@@ -1,5 +1,6 @@
 import {Component,Input, EventEmitter} from '@angular/core'
 import { getClosureSafeProperty } from '@angular/core/src/util/property';
+import { IEvent } from './shared';
 
 
 @Component(
@@ -36,7 +37,7 @@ import { getClosureSafeProperty } from '@angular/core/src/util/property';
 )
 
 export class EventThumbnailComponent{
-   @Input() event:any
+   @Input() event: IEvent
    
    getClass()
    {
