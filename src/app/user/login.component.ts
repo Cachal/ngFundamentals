@@ -1,45 +1,33 @@
-import {Component} from '@angular/core';
-<<<<<<< HEAD
-import {AuthService} from './auth.service';
-import {Router} from '@angular/router';
-=======
-import { AuthService } from './auth.service';
-import {Router} from '@angular/router'
+import { Component } from '@angular/core';
 
->>>>>>> 85eccf6d6eb47ee263a8b062847c4ef5dfc49630
+import { AuthService } from './auth.service';
+import { Router } from '@angular/router'
+
 @Component({
-    templateUrl:'./login.component.html'
+    templateUrl: './login.component.html',
+    styles: [`
+      em { float:right;
+           color: #E05C65;
+           padding-left : 10px;}`]
 })
 
-export class LoginComponent{
-<<<<<<< HEAD
-    constructor(private authService : AuthService,
-                private router : Router){
-=======
-    constructor(public authService: AuthService,
-                private router:Router )
-    {
->>>>>>> 85eccf6d6eb47ee263a8b062847c4ef5dfc49630
+export class LoginComponent {
+
+    constructor(private authService: AuthService,
+        private router: Router) {
+
 
     }
-    login(formValues)
-    {
-<<<<<<< HEAD
-       this.authService.loginUser(formValues.userName, formValues.password)
-       this.router.navigate(['/events']);
-    }
-    cancel(){
-        this.router.navigate(['/events' ]);
-=======
-        this.authService.loginUser(formValues.userName, 
+    login(formValues) {
+
+        this.authService.loginUser(formValues.userName,
             formValues.password);
-        this.router.navigate(['events'])     
-        
+        this.router.navigate(['events'])
+
     }
-    cancel()
-    {
-        this.router.navigate(['events'])     
-        
->>>>>>> 85eccf6d6eb47ee263a8b062847c4ef5dfc49630
+    cancel() {
+        this.router.navigate(['events'])
+
+
     }
 }

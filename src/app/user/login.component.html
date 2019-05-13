@@ -4,21 +4,21 @@
   <form #loginForm="ngForm" autocomplete="off" (ngSubmit)="login(loginForm.value)">
     <div class="form-group" >
       <label for="userName">User Name:</label>
+      <em *ngIf = "loginForm.controls.userName?.invalid">Required</em>
       <input (ngModel)="userName" name="userName" id="userName" type="text" 
       class="form-control" placeholder="User Name..." />
     </div>
     <div class="form-group" >
       <label for="password">Password:</label>
+      <em *ngIf = "loginForm.controls.password?.invalid">Required</em>
       <input (ngModel)="password" name="password" id="password" type="password" 
       class="form-control"placeholder="Password..." />
     </div>
         
-    <button type="submit" class="btn btn-primary">Login</button>
-<<<<<<< HEAD
-    <button type="button" class="btn btn-default" (click)= "cancel()">Cancel</button>
-=======
+    <button type="submit" [disabled] = "!loginForm.valid" class="btn btn-primary" >Login</button>
+
     <button type="button" class="btn btn-default"
     (click) = "cancel()">Cancel</button>
->>>>>>> 85eccf6d6eb47ee263a8b062847c4ef5dfc49630
+
   </form>
 </div>

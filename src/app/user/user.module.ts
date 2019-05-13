@@ -25,13 +25,10 @@ import { userRoutes } from './user.routes';
             ProfileComponent,
             LoginComponent
         ],
-<<<<<<< HEAD
-        
-        providers:[
-=======
+
 
         providers: [
->>>>>>> 85eccf6d6eb47ee263a8b062847c4ef5dfc49630
+
             
         ]
     }
