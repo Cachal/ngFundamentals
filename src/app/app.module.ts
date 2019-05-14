@@ -19,10 +19,12 @@ import { RouterModule } from '@angular/router';
 import { Error404Component } from './Errors/404.component';
 import { AuthService } from './user/auth.service';
 
+
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes)
+   
   ],
   declarations: [
     EventsAppComponent,
