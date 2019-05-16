@@ -18,12 +18,15 @@ import { appRoutes } from './appRoutes';
 import { RouterModule } from '@angular/router';
 import { Error404Component } from './Errors/404.component';
 import { AuthService } from './user/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
    
   ],
   declarations: [
