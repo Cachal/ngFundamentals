@@ -28,6 +28,7 @@ import {ISession,restrictedWords} from "../shared/index";
     `
   ]
 })
+
 export class CreateSessionComponent implements OnInit {
   public name: FormControl;
   public presenter: FormControl;
