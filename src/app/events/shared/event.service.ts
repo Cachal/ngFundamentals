@@ -18,6 +18,12 @@ export class EventService{
       event.session = [];
       EVENTS.push(event);
     }
+    public updateEvent(event)
+    {
+      let index = EVENTS.findIndex(x=>x.id == event.id);
+      EVENTS[index] = event;
+      
+    }
     
 }
 
