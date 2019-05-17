@@ -30,6 +30,7 @@ import {ISession,restrictedWords} from "../shared/index";
     `
   ]
 })
+
 export class CreateSessionComponent implements OnInit {
 
   @Output() saveNewSession = new EventEmitter();
