@@ -12,6 +12,18 @@ export class EventService{
     public getEvent(id: number){
       return EVENTS.find(event=>event.id===id);
     }
+    public saveEvent(event)
+    {
+      event.id = 999;
+      event.session = [];
+      EVENTS.push(event);
+    }
+    public updateEvent(event)
+    {
+      let index = EVENTS.findIndex(x=>x.id == event.id);
+      EVENTS[index] = event;
+      
+    }
     
 }
 
