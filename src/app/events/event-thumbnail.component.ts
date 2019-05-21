@@ -1,5 +1,5 @@
 import {Component,Input, EventEmitter} from '@angular/core'
-import { getClosureSafeProperty } from '@angular/core/src/util/property';
+
 import { IEvent } from './shared';
 
 
