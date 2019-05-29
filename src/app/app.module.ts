@@ -12,10 +12,13 @@ import {
   SessionListComponent,
   DurationPipe
 } from "./events/index";
-import {TOASTR_TOKEN,
+import {
+  TOASTR_TOKEN,
   Toastr,
-  JQ_TOKEN, 
-  CollapsibleWellComponent} from "./common/index";
+  JQ_TOKEN,
+  CollapsibleWellComponent,
+  SimpleModalComponent
+} from "./common/index";
 import {EventsAppComponent} from "./events-app.component";
 import {NavBarComponent} from "./nav/navbar.component";
 import {appRoutes} from "./appRoutes";
@@ -25,8 +28,8 @@ import {AuthService} from "./user/auth.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 //using bracket notation to store window properties into variables. window.toastr equals to window['toastr']
- let toastr : Toastr = window['toastr'];
- let jQuery = window['$'];
+let toastr: Toastr = window["toastr"];
+let jQuery = window["$"];
 @NgModule({
   imports: [
     BrowserModule,
@@ -45,13 +48,18 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent
   ],
   providers: [
     EventService,
     {
-      provide:TOASTR_TOKEN,
+      provide: TOASTR_TOKEN,
       useValue: toastr
+    },
+    {
+      provide: JQ_TOKEN,
+      useValue: jQuery
     },
     EventRouteActivator,
     AuthService,
