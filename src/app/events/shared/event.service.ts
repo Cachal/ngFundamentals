@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, EventEmitter} from '@angular/core';
 import {Subject,Observable} from 'rxjs';
 import {IEvent, ISession} from './event.model';
 
@@ -23,6 +23,27 @@ export class EventService{
       let index = EVENTS.findIndex(x=>x.id == event.id);
       EVENTS[index] = event;
       
+    }
+    public searchSessions(searchTerm: string){
+      let term = searchTerm.toLocaleLowerCase();
+      let results : ISession[] = [];
+      EVENTS.forEach(event=> {
+        //finding the sessions where the search term matches with the name.
+        let matchingSessions = event.sessions.filter(session=>
+          session.name.toLocaleLowerCase().indexOf(term)>-1);
+        //Adding a event ID to the sessions so that we can use that Id to route.
+        matchingSessions = matchingSessions.map((session: any)=>{
+          session.eventId = event.id;
+          return session;
+        })
+        //adding the sessions to the local variable
+        results = results.concat(matchingSessions);
+      })
+    //Using an event emitter to create the local variable as an observale
+    let eventEmitter = new EventEmitter(true);
+    //mimicking http delay when getting data using set timeout.
+    setTimeout(()=>eventEmitter.emit(results),100);
+    return eventEmitter;
     }
     
 }
