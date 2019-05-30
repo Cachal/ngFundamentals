@@ -17,7 +17,8 @@ import {
   Toastr,
   JQ_TOKEN,
   CollapsibleWellComponent,
-  SimpleModalComponent
+  SimpleModalComponent,
+  ModalTriggerDirective
 } from "./common/index";
 import {EventsAppComponent} from "./events-app.component";
 import {NavBarComponent} from "./nav/navbar.component";
@@ -49,7 +50,8 @@ let jQuery = window["$"];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   providers: [
     EventService,

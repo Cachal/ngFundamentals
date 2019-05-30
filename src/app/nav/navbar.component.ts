@@ -25,7 +25,7 @@ constructor(private authService: AuthService,
 searchSessions(searchTerm)
 {
     this.eventService.searchSessions(searchTerm).subscribe(t=>this.foundSessions=t);
-    console.log(this.foundSessions);
+ 
 }
 
 }
