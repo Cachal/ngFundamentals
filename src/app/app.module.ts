@@ -10,7 +10,9 @@ import {
   EventsListComponent,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  DurationPipe,
+  UpvoteComponent,
+  VoterService
 } from "./events/index";
 import {
   TOASTR_TOKEN,
@@ -49,6 +51,7 @@ let jQuery = window["$"];
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
+    UpvoteComponent,
     DurationPipe,
     SimpleModalComponent,
     ModalTriggerDirective
@@ -70,7 +73,8 @@ let jQuery = window["$"];
       provide: "canDeactivateCreateEvent",
       useValue: checkDirtyState
     },
-    AuthService
+    AuthService,
+    VoterService
   ],
 
   bootstrap: [EventsAppComponent]
