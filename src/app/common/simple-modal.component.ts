@@ -26,6 +26,9 @@ import { JQ_TOKEN } from './jQuery.service';
 export class SimpleModalComponent {
     @Input() title:string;
     @Input() elementId : string;
+    //this property controls the closing of the modal. It is passed as a variable
+    // and is used in the closeModal() method. 
+    @Input() closeOnBodyClick: string;
     //Creating a view child with a local variable. The same implementation has been done
     // in modal-trigger but using Element Ref
     @ViewChild('modalContainer') containerEl : ElementRef;
@@ -34,6 +37,9 @@ export class SimpleModalComponent {
 
     }
     closeModal(){
-      this.$(this.containerEl.nativeElement).modal('hide');
+      if(this.closeOnBodyClick.toLocaleLowerCase() === "true"){
+        this.$(this.containerEl.nativeElement).modal('hide');
+      }
+     
     }
 }
